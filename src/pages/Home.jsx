@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Clock } from "../components/Clock";
 import { Modal } from "../helpers/Modal";
+import { AiFillCaretRight } from "react-icons/ai";
 
 export function Home({usuarios, setUsuarios}) {
 
@@ -75,6 +76,7 @@ export function Home({usuarios, setUsuarios}) {
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Ingresa el ID a buscar"
               />
+              <button  type='submit' >Enviar<AiFillCaretRight /></button>
             </form>
             <Modal nombreUsuario={nombreUsuario} isOpen={isModalOpen} onClose={handleCloseModal} />
           </div>
@@ -92,6 +94,21 @@ const Container =styled.div`
   
   align-content: center;
   height:100vh;
+
+  form {
+    display: flex;
+    align-items: center;
+    
+  }
+
+  button {
+    
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .tarjetaDash{
     
     margin: auto;
@@ -112,18 +129,21 @@ const Container =styled.div`
     
     
     
+    
 }
 
+
+
 form input[type='text'],
-form select,
-form textarea{
-  display: block;
+form input[type='submit'],
+form button{
+  display: flex;
   margin: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left:10px;
   padding-right: 10px;
-  min-width: 200px;
+  min-width: 100px;
   max-width: 200px;
   
 
