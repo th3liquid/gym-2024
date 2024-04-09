@@ -93,12 +93,13 @@ const Container =styled.div`
   align-content: center;
   height:100vh;
   .tarjetaDash{
-    margin: 30%;
-  
+    
+    margin: auto;
+    max-width: 400px;
     display: block;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    padding: 30px;
     background: ${(props) => props.theme.bg2};
     text-align: center;
     border-radius: 10px;
