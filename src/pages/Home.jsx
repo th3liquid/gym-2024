@@ -122,7 +122,8 @@ form textarea{
   padding-bottom: 15px;
   padding-left:10px;
   padding-right: 10px;
-  min-width: 250px;
+  min-width: 200px;
+  max-width: 200px;
   
 
 }
@@ -152,6 +153,7 @@ form textarea{
   font-weight: 100;
   font-size: 30px;
 }
+
 }
 
  
