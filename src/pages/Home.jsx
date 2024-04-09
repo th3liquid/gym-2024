@@ -5,40 +5,16 @@ import { Modal } from "../helpers/Modal";
 import { AiFillCaretRight } from "react-icons/ai";
 
 export function Home({usuarios, setUsuarios}) {
-
-  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
-
   const [nombreUsuario, setNombreUsuario] = useState('');
-  const [isModalAutoClose, setIsModalAutoClose] = useState(false);
-  
-  // const [usuarios, setUsuarios] = useState([]);
-  
-  
-  // const usuariosEstaticos = () => {
-  //   fetch('https://reqres.in/api/users?page=1')
-  //   .then(respuesta => respuesta.json())
-  //   .then(data_final => {
-  //     setUsuarios(data_final.data);
-  //     console.log('Usuarios cargados:', data_final.data);
-  //   })
-  //   .catch(error => {
-  //     console.log('Hubo un error en la consulta');
-  //   });
-  // }
-  
-  // useEffect(() => {
-  //   usuariosEstaticos();
-  // }, []);
-  
+  const [usuarioEncontrado, setUsuarioEncontrado] = useState(false);
 
   const handleOpenModal = () => {
-    setIsModalAutoClose(true); // Activar el cierre automático al abrir el modal
     setIsModalOpen(true);
     setTimeout(() => {
-      setIsModalOpen(false); // Cierra el modal después de 4 segundos
-    }, 2000); // 4000 milisegundos son 4 segundos
+      setIsModalOpen(false);
+    }, 2000);
   };
 
   const handleCloseModal = () => {
@@ -47,19 +23,18 @@ export function Home({usuarios, setUsuarios}) {
 
   const conseguirIdInput = e => {
     e.preventDefault();
-    const datosInput = inputValue.trim(); // Elimina espacios en blanco al principio y al final
-    
-    // Busca el usuario en la lista de usuarios obtenida de la petición AJAX
+    const datosInput = inputValue.trim();
     const usuarioEncontrado = usuarios.find(usuario => usuario.id.toString() === datosInput);
     
     if (usuarioEncontrado) {
       const nombreUsuario = `${usuarioEncontrado.first_name} ${usuarioEncontrado.last_name}`;
       setNombreUsuario(nombreUsuario);
-      handleOpenModal(); // Abre el modal si se encontró el usuario
+      setUsuarioEncontrado(true);
     } else {
-      console.log('Usuario no encontrado');
+      setUsuarioEncontrado(false);
     }
-  }
+    handleOpenModal();
+  };
 
   return (
     <>
@@ -67,6 +42,7 @@ export function Home({usuarios, setUsuarios}) {
         <div className="tarjetaDash">
           <h2>Bienvenido <span style={{color: '#00BFFF'}}></span></h2>
           <Clock />
+          <h1>ID: {inputValue}</h1>
           <div className="tarjetaDash2">
             <form onSubmit={conseguirIdInput} action="">
               <input
@@ -76,9 +52,15 @@ export function Home({usuarios, setUsuarios}) {
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Ingresa el ID a buscar"
               />
-              <button  type='submit' >Enviar<AiFillCaretRight /></button>
+              <button type='submit'>Enviar<AiFillCaretRight /></button>
             </form>
-            <Modal nombreUsuario={nombreUsuario} isOpen={isModalOpen} onClose={handleCloseModal} />
+            <Modal
+              nombreUsuario={nombreUsuario}
+              isOpen={isModalOpen}
+              onClose={handleCloseModal}
+              usuarios={usuarios}
+              usuarioEncontrado={usuarioEncontrado}
+            />
           </div>
         </div>
       </Container>
