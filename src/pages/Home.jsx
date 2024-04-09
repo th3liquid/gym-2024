@@ -126,14 +126,31 @@ form textarea{
   
 
 }
+.reloj-titulo {
+  font-size: 40px;
+}
 
-@media (max-width: 390px){
+.reloj-titulo-light{
+  font-weight: 100;
+  font-size: 50px;
+}
+
+
+@media (max-width: 600px){
   
   .tarjetaDash{
     margin: 5%;
   
   
     
+}
+.reloj-titulo {
+  font-size: 20px;
+}
+
+.reloj-titulo-light{
+  font-weight: 100;
+  font-size: 30px;
 }
 }
 
