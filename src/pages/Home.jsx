@@ -52,7 +52,7 @@ export function Home({usuarios, setUsuarios}) {
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Ingresa el ID a buscar"
               />
-              <button type='submit'>Enviar<AiFillCaretRight /></button>
+              
             </form>
             <Modal
               nombreUsuario={nombreUsuario}
@@ -125,7 +125,7 @@ form button{
   padding-bottom: 15px;
   padding-left:10px;
   padding-right: 10px;
-  min-width: 100px;
+  min-width: 200px;
   max-width: 200px;
   
 
