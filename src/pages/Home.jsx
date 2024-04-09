@@ -85,7 +85,7 @@ export function Home({usuarios, setUsuarios}) {
 }
 const Container =styled.div`
 
-  background-image: url('/public/img/background.jpg');  /* Reemplaza 'ruta/de/la/imagen.jpg' con la ruta de tu imagen */
+  background-image: url('/img/background.jpg');  /* Reemplaza 'ruta/de/la/imagen.jpg' con la ruta de tu imagen */
   background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
   background-position: center; /* Centra la imagen en el fondo */
   background-repeat: no-repeat; /* Evita que la imagen se repita */

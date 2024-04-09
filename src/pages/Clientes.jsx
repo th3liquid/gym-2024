@@ -28,7 +28,8 @@ export function Clientes({usuarios, setUsuarios}) {
 
   const userTableStyles = {
     height: '500px',
-    overflowX: 'auto',
+    
+    
     
 
   }
@@ -38,7 +39,7 @@ export function Clientes({usuarios, setUsuarios}) {
     <Container>
       <h1>Clientes</h1>
       <div className="contenedor-principal">
-      <DataTable rows={usuarios} columns={columns} loading={!usuarios.length} sx={userTableStyles}  />
+      <DataTable rows={usuarios} columns={columns} loading={!usuarios.length} sx={{ overflowX: 'scroll' }}  />
 
       </div>
     </Container>
@@ -46,11 +47,13 @@ export function Clientes({usuarios, setUsuarios}) {
 }
 const Container = styled.div`
 
-padding:50px;
+padding:5%;
  height:100vh;
  .contenedor-principal{
   background-color: white;
   padding: 30px;
  }
+
+
  
  `;
