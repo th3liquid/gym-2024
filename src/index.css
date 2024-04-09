@@ -37,3 +37,15 @@
   right: 10px;
   cursor: pointer;
 }
+
+.MuiDataGrid-root .MuiDataGrid-scrollContainer {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch; /* Propiedad específica para mejorar el scroll en dispositivos iOS */
+}
+
+/* Opcional: ajustar el tamaño de las columnas para que se ajusten al contenido */
+.MuiDataGrid-root .MuiDataGrid-colCell {
+  min-width: unset !important;
+}
