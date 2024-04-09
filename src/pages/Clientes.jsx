@@ -28,6 +28,8 @@ export function Clientes({usuarios, setUsuarios}) {
 
   const userTableStyles = {
     height: '500px',
+    overflowX: 'auto',
+    
 
   }
 
