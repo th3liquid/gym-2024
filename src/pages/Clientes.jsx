@@ -28,7 +28,7 @@ export function Clientes({usuarios, setUsuarios}) {
 
   const userTableStyles = {
     height: '500px',
-    
+
     
     
 
@@ -53,6 +53,15 @@ padding:5%;
   background-color: white;
   padding: 30px;
  }
+
+ @media (max-width: 600px){
+  
+  .contenedor-principal{
+    max-width: 300px;
+  
+  
+    
+}
 
 
  
