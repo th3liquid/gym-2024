@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import logo from "../assets/react.svg";
 import { v } from "../styles/Variables";
+import { AiOutlineUsergroupAdd } from "react-icons/ai";
+import { AiOutlineDropbox } from "react-icons/ai";
 import {
   AiOutlineLeft,
   AiOutlineHome,
@@ -87,19 +89,15 @@ const linksArray = [
   },
   {
     label: "Clientes",
-    icon: <MdOutlineAnalytics />,
+    icon: <AiOutlineUsergroupAdd />,
     to: "/clientes",
   },
   {
     label: "Productos",
-    icon: <AiOutlineApartment />,
+    icon: <AiOutlineDropbox />,
     to: "/productos",
   },
-  {
-    label: "Diagramas",
-    icon: <MdOutlineAnalytics />,
-    to: "/diagramas",
-  },
+ 
   {
     label: "Reportes",
     icon: <MdOutlineAnalytics />,

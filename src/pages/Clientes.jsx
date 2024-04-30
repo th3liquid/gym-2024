@@ -66,7 +66,7 @@ export function Clientes({usuarios, setUsuarios}) {
     console.log('Editando cliente con ID:', id);
   }
 
-  console.log('usuarios Clientes:',usuarios);
+
   return (
     <Container>
       <h1>Clientes</h1>

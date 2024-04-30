@@ -11,7 +11,20 @@ import { CrearCliente } from "../pages/crear-cliente/CrearCliente";
 export const MyRoutes = () => {
 
   const [usuarios, setUsuarios] = useState([]);
+
+  const [productos, setProductos] = useState([])
   
+  const productosEstaticos = () => {
+    fetch('https://fakestoreapi.com/products/')
+            .then(respuesta => respuesta.json())
+            .then(productos_final => {
+              setProductos(productos_final);
+              console.log('Productos Cargados:', productos_final);
+            })
+            .catch(error => {
+              console.log('Hubo un error en los productos');
+            })
+  }
   
   const usuariosEstaticos = () => {
     fetch('https://reqres.in/api/users?page=1')
@@ -27,13 +40,14 @@ export const MyRoutes = () => {
   
   useEffect(() => {
     usuariosEstaticos();
+    productosEstaticos();
   }, []);
 
   return (
 
     <Routes>
     <Route path="/" element={<Home usuarios={usuarios} setUsuarios={setUsuarios}/>} />
-    <Route path="/productos" element={<Productos />} />
+    <Route path="/productos" element={<Productos productos={productos} setProductos={setProductos} />} />
     <Route path="/clientes/" element={<Clientes usuarios={usuarios} setUsuarios={setUsuarios} />} />
     <Route path="/clientes/crear" element={<CrearCliente />} />
     
