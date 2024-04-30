@@ -71,7 +71,7 @@ export function Clientes({usuarios, setUsuarios}) {
     <Container>
       <h1>Clientes</h1>
       <div className="rect-base">
-        <Button variant="contained"onClick={() => setIsModalOpen(true)}>Añador Cliente</Button>
+        <Button variant="contained"onClick={() => setIsModalOpen(true)}>Añadir Cliente</Button>
       </div>
 
       {/* Modal */}
