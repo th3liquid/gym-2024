@@ -42,7 +42,7 @@ export function Home({usuarios, setUsuarios}) {
         <div className="tarjetaDash">
           <h2>Bienvenido <span style={{color: '#00BFFF'}}></span></h2>
           <Clock />
-          <h1>ID: {inputValue}</h1>
+          
           <div className="tarjetaDash2">
             <form onSubmit={conseguirIdInput} action="">
               <input
