@@ -43,3 +43,25 @@
   overflow-y: hidden;
   white-space: nowrap;
 }
+
+.container{
+  background: #fff;
+  width: 80%;
+  padding: 5%;
+  margin: 15%;
+}
+
+
+
+
+.container h1 {
+  color: black !important;
+  font-size: 30px;
+}
+
+.rect-base{
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: flex-end;
+}

@@ -3,10 +3,14 @@ import * as React from 'react';
 import { DataGrid } from "@mui/x-data-grid";
 import { DataTable } from "../components/DataTable";
 import { height } from "@mui/system";
+import { CrearCliente } from "./crear-cliente/CrearCliente";
+import { Button } from "@mui/material";
 
 
 
 export function Clientes({usuarios, setUsuarios}) {
+
+  const [isModalOpen, setIsModalOpen] = React.useState(false)
 
   const rows  = [
     {id: 1, col1: 'Hello', col2: 'World'},
@@ -23,6 +27,26 @@ export function Clientes({usuarios, setUsuarios}) {
     {field: 'first_name', headerName: 'Nombre', width: 150},
     {field: 'last_name', headerName: 'Apellido', width: 150},
     {field: 'email', headerName: 'Email', width: 150},
+    {
+      field: 'editar',
+      headerName: 'Editar',
+      width: 150,
+      renderCell: (params) => (
+        <Button variant="contained" color="primary" onClick={() => handleEditar(params.row.id)}>
+          Editar
+        </Button>
+      ),
+    },
+    {
+      field: 'borrar',
+      headerName: 'Borrar',
+      width: 150,
+      renderCell: (params) => (
+        <Button color='error' variant="contained" onClick={() => handleBorrar(params.row.id)}>
+          Borrar
+        </Button>
+      ),
+    },
     
   ]
 
@@ -33,11 +57,25 @@ export function Clientes({usuarios, setUsuarios}) {
     
 
   }
+  const handleEditar = (id) => {
+    // Lógica para manejar la edición del cliente con el ID proporcionado
+    console.log('Editando cliente con ID:', id);
+  }
+  const handleBorrar = (id) => {
+    // Lógica para manejar la edición del cliente con el ID proporcionado
+    console.log('Editando cliente con ID:', id);
+  }
 
   console.log('usuarios Clientes:',usuarios);
   return (
     <Container>
       <h1>Clientes</h1>
+      <div className="rect-base">
+        <Button variant="contained"onClick={() => setIsModalOpen(true)}>Dar de Alta Cliente</Button>
+      </div>
+
+      {/* Modal */}
+        <CrearCliente isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)} />
       <div className="contenedor-principal">
       <DataTable rows={usuarios} columns={columns} loading={!usuarios.length} sx={{ overflowX: 'scroll' }}  />
 

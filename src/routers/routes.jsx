@@ -6,6 +6,7 @@ import {Diagramas} from "../pages/Diagramas";
 import {Reportes} from "../pages/Reportes";
 import { Clientes } from "../pages/Clientes";
 import React, { useEffect, useState } from 'react'
+import { CrearCliente } from "../pages/crear-cliente/CrearCliente";
 
 export const MyRoutes = () => {
 
@@ -33,7 +34,10 @@ export const MyRoutes = () => {
     <Routes>
     <Route path="/" element={<Home usuarios={usuarios} setUsuarios={setUsuarios}/>} />
     <Route path="/productos" element={<Productos />} />
-    <Route path="/clientes" element={<Clientes usuarios={usuarios} setUsuarios={setUsuarios} />} />
+    <Route path="/clientes/" element={<Clientes usuarios={usuarios} setUsuarios={setUsuarios} />} />
+    <Route path="/clientes/crear" element={<CrearCliente />} />
+    
+    
     <Route path="/diagramas" element={<Diagramas />} />
     <Route path="/reportes" element={<Reportes />} />
     <Route path="/*" element={<Home />} />

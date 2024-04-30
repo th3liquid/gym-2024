@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import { MyRoutes } from "./routers/routes";
 import styled from "styled-components";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Outlet } from "react-router-dom";
 import { Sidebar } from "./components/Sidebar";
 import { Light, Dark } from "./styles/Themes";
 import { ThemeProvider } from "styled-components";
@@ -26,13 +26,17 @@ function App() {
       <ThemeContext.Provider value={{ setTheme, theme }}>
         <ThemeProvider theme={themeStyle}>
           <BrowserRouter>
+          
+
             <Container className={sidebarOpen ? "sidebarState active" : ""}>
               <Sidebar
                 sidebarOpen={sidebarOpen}
                 setSidebarOpen={setSidebarOpen}
-              />
+                />
               <MyRoutes />
+              
             </Container>
+                
           </BrowserRouter>
         </ThemeProvider>
       </ThemeContext.Provider>
