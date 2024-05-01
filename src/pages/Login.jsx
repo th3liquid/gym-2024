@@ -24,7 +24,7 @@ export const Login = ({login, setLogin}) => {
             type='text'
             />
             <div style={{display: 'flex', justifyContent: 'center'}}>
-            <Link to="/">
+            <Link to="/home">
                 <Button onClick={() => setLogin(true)} size='large' sx={{mt: 3}} variant='outlined'>Ingresar</Button>
             </Link>
             </div>

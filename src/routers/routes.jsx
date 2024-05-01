@@ -58,7 +58,8 @@ export const MyRoutes = ({login, setLogin}) => {
   return (
 
     <Routes>
-    <Route path="/" element={<Home usuarios={usuarios} setUsuarios={setUsuarios}/>} />
+    <Route path="/" element={<Login login={login} setLogin={setLogin} />} />
+    <Route path="/home" element={<Home usuarios={usuarios} setUsuarios={setUsuarios}/>} />
     <Route path="/productos" element={<Productos productos={productos} setProductos={setProductos} />} />
     <Route path="/clientes/" element={<Clientes usuarios={usuarios} setUsuarios={setUsuarios} />} />
     
@@ -66,7 +67,7 @@ export const MyRoutes = ({login, setLogin}) => {
     <Route path="/configuracion"  element={<Configuracion usuariosMaster={usuariosMaster} usuarios={usuarios} setUsuarios={setUsuarios} />} />
     <Route path="/reportes" element={<Reportes />} />
     <Route path="/login" element={<Login login={login} setLogin={setLogin} />} />
-    <Route path="/*" element={<Home />} />
+    <Route path="/*" element={<Login />} />
   </Routes>
     
     
