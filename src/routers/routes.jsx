@@ -7,12 +7,23 @@ import {Reportes} from "../pages/Reportes";
 import { Clientes } from "../pages/Clientes";
 import React, { useEffect, useState } from 'react'
 import { CrearCliente } from "../pages/crear-cliente/CrearCliente";
+import { Configuracion } from "../pages/Configuracion";
+
+
+  
 
 export const MyRoutes = () => {
 
   const [usuarios, setUsuarios] = useState([]);
 
   const [productos, setProductos] = useState([])
+
+
+  const usuariosMaster = [
+    { id: 1, username: 'th3liquid', nombre: 'Kevin Alan', email: 'th3liquid@gmail.com', image: 'https://placekitten.com/300/300' },
+    { id: 2, username: 'usuario2' },
+    { id: 3, username: 'usuario3' }
+  ];
   
   const productosEstaticos = () => {
     fetch('https://fakestoreapi.com/products/')
@@ -51,6 +62,7 @@ export const MyRoutes = () => {
     <Route path="/clientes/" element={<Clientes usuarios={usuarios} setUsuarios={setUsuarios} />} />
     
     <Route path="/diagramas" element={<Diagramas />} />
+    <Route path="/configuracion"  element={<Configuracion usuariosMaster={usuariosMaster} usuarios={usuarios} setUsuarios={setUsuarios} />} />
     <Route path="/reportes" element={<Reportes />} />
     <Route path="/*" element={<Home />} />
   </Routes>

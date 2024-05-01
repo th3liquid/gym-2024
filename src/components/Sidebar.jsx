@@ -13,6 +13,7 @@ import { MdOutlineAnalytics, MdLogout } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
+import { usuariosMaster } from "../../public/apilocal/apilocal";
 export function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const ModSidebaropen = () => {
     setSidebarOpen(!sidebarOpen);
@@ -21,6 +22,8 @@ export function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const CambiarTheme = () => {
     setTheme((theme) => (theme === "light" ? "dark" : "light"));
   };
+
+  
 
   return (
     <Container isOpen={sidebarOpen} themeUse={theme}>
@@ -57,6 +60,9 @@ export function Sidebar({ sidebarOpen, setSidebarOpen }) {
         </div>
       ))}
       <Divider />
+      <div style={{display: 'flex', justifyContent: 'center', marginBottom: '20px'}}>
+        <img style={{width: '40px', borderRadius: '200px'}} src={usuariosMaster[0].image} alt="" />
+      </div>
       <div className="Themecontent">
         {sidebarOpen && <span className="titletheme">Modo Oscuro</span>}
         <div className="Togglecontent">
@@ -108,7 +114,7 @@ const secondarylinksArray = [
   {
     label: "Configuración",
     icon: <AiOutlineSetting />,
-    to: "/null",
+    to: "/configuracion",
   },
   {
     label: "Salir",
