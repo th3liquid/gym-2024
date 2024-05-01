@@ -6,7 +6,7 @@ export const Login = ({login, setLogin}) => {
   return (
     <>
     <div className='loginback' >
-        <div style={{padding: '20px', background: 'white', width: '20%'}}>
+        <div style={{padding: '20px', background: 'white', width: '80%'}}>
             <div style={{display: 'flex', justifyContent: 'center'}}>
                 <h1>Login</h1>
 
