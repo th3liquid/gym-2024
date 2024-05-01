@@ -10,11 +10,13 @@ import {
   AiOutlineSetting,
 } from "react-icons/ai";
 import { MdOutlineAnalytics, MdLogout } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
 import { usuariosMaster } from "../../public/apilocal/apilocal";
-export function Sidebar({ sidebarOpen, setSidebarOpen }) {
+
+
+export function Sidebar({ sidebarOpen, setSidebarOpen, setLogin }) {
   const ModSidebaropen = () => {
     setSidebarOpen(!sidebarOpen);
   };
@@ -60,8 +62,13 @@ export function Sidebar({ sidebarOpen, setSidebarOpen }) {
         </div>
       ))}
       <Divider />
-      <div style={{display: 'flex', justifyContent: 'center', marginBottom: '20px'}}>
+      <div style={{display: 'flex', justifyContent: 'center', marginBottom: '30px'}}>
         <img style={{width: '40px', borderRadius: '200px'}} src={usuariosMaster[0].image} alt="" />
+      </div>
+      <div style={{display: 'flex', justifyContent: 'center', marginBottom: '20px'}}>
+        <Link to='/login' onClick={() => setLogin(false)} className="logout-button">
+          <MdLogout style={{fontSize: '25px'}} />
+        </Link>
       </div>
       <div className="Themecontent">
         {sidebarOpen && <span className="titletheme">Modo Oscuro</span>}
@@ -116,11 +123,7 @@ const secondarylinksArray = [
     icon: <AiOutlineSetting />,
     to: "/configuracion",
   },
-  {
-    label: "Salir",
-    icon: <MdLogout />,
-    to: "/null",
-  },
+  
 ];
 //#endregion
 

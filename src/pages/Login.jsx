@@ -5,8 +5,8 @@ import React from 'react'
 export const Login = ({login, setLogin}) => {
   return (
     <>
-    <div style={{height: '100vh', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
-        <div style={{padding: '20px', background: '#3333', width: '20%'}}>
+    <div className='loginback' >
+        <div style={{padding: '20px', background: 'white', width: '20%'}}>
             <div style={{display: 'flex', justifyContent: 'center'}}>
                 <h1>Login</h1>
 

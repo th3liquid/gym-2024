@@ -34,6 +34,8 @@ function App() {
                 <>
                  <Container className={sidebarOpen ? "sidebarState active" : ""}>
                 <Sidebar
+                login={login}
+                setLogin={setLogin}
                 sidebarOpen={sidebarOpen}
                 setSidebarOpen={setSidebarOpen}
                 />
