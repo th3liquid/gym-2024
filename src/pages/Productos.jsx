@@ -7,6 +7,8 @@ import { CrearProducto } from "./crear-producto/CrearProducto";
 
 export function Productos({productos, setProductos}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+ 
+
 
 
   const columns = [
@@ -15,6 +17,7 @@ export function Productos({productos, setProductos}) {
       <img src={imagen.value} alt="Avatar" style={{ width: 50, height: 50 }} /> // Utiliza el Avatar de Mui para mostrar la imagen
     ),},
     {field: 'title', headerName: 'Nombre', width: 150},
+    {field: 'category', headerName: 'Categoría', width: 150},
     {field: 'description', headerName: 'Descripción', width: 150},
     {field: 'price', headerName: 'Precio', width: 150},
     {
@@ -61,9 +64,9 @@ export function Productos({productos, setProductos}) {
 
       {isModalOpen ? (
         
-        <CrearProducto setIsModalOpen={setIsModalOpen} />
+        <CrearProducto setProductos={setProductos}  setIsModalOpen={setIsModalOpen} />
       ): ''}
-      
+
       <div className="contenedor-principal">
       <DataTable rows={productos} columns={columns} loading={!productos.length} sx={{ overflowX: 'scroll' }}  /> 
 

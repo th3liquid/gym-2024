@@ -49,8 +49,6 @@ export const MyRoutes = () => {
     <Route path="/" element={<Home usuarios={usuarios} setUsuarios={setUsuarios}/>} />
     <Route path="/productos" element={<Productos productos={productos} setProductos={setProductos} />} />
     <Route path="/clientes/" element={<Clientes usuarios={usuarios} setUsuarios={setUsuarios} />} />
-    <Route path="/clientes/crear" element={<CrearCliente />} />
-    
     
     <Route path="/diagramas" element={<Diagramas />} />
     <Route path="/reportes" element={<Reportes />} />
