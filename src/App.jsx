@@ -17,6 +17,7 @@ function App() {
   const themeStyle = theme === "light" ? Light : Dark;
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [login, setLogin] = useState(false);
 
 
 
@@ -28,14 +29,26 @@ function App() {
           <BrowserRouter>
           
 
-            <Container className={sidebarOpen ? "sidebarState active" : ""}>
-              <Sidebar
+           
+              {login ? (
+                <>
+                 <Container className={sidebarOpen ? "sidebarState active" : ""}>
+                <Sidebar
                 sidebarOpen={sidebarOpen}
                 setSidebarOpen={setSidebarOpen}
                 />
+                
               <MyRoutes />
+
+              </Container>
+                
+                </>
+
+              ): <MyRoutes login={login} setLogin={setLogin} />}
+             
               
-            </Container>
+              
+          
                 
           </BrowserRouter>
         </ThemeProvider>

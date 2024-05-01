@@ -8,11 +8,12 @@ import { Clientes } from "../pages/Clientes";
 import React, { useEffect, useState } from 'react'
 import { CrearCliente } from "../pages/crear-cliente/CrearCliente";
 import { Configuracion } from "../pages/Configuracion";
+import { Login } from "../pages/Login";
 
 
   
 
-export const MyRoutes = () => {
+export const MyRoutes = ({login, setLogin}) => {
 
   const [usuarios, setUsuarios] = useState([]);
 
@@ -64,6 +65,7 @@ export const MyRoutes = () => {
     <Route path="/diagramas" element={<Diagramas />} />
     <Route path="/configuracion"  element={<Configuracion usuariosMaster={usuariosMaster} usuarios={usuarios} setUsuarios={setUsuarios} />} />
     <Route path="/reportes" element={<Reportes />} />
+    <Route path="/login" element={<Login login={login} setLogin={setLogin} />} />
     <Route path="/*" element={<Home />} />
   </Routes>
     
